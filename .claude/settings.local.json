@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s https://www.thegioididong.com -H 'User-Agent: Mozilla/5.0')",
+      "Bash(curl -s https://www.thegioididong.com/tim-kiem?key=iphone -H 'User-Agent: Mozilla/5.0')",
+      "Bash(cmd /c start \"\" \"C:\\\\Users\\\\LENOVO\\\\Desktop\\\\ToolTest\\\\target\\\\surefire-reports\\\\emailable-report.html\")"
+    ]
+  }
+}

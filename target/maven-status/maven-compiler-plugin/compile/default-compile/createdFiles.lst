@@ -1,0 +1,7 @@
+base\BasePage.class
+pages\LoginPage.class
+pages\CartPage.class
+pages\HomePage.class
+pages\SearchPage.class
+pages\CheckoutPage.class
+utils\DriverManager.class

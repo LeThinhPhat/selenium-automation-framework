@@ -1,0 +1,12 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.test.config": {
+        "workingDirectory": "${workspaceFolder}"
+    },
+    "java.project.sourcePaths": [
+        "src/main/java",
+        "src/test/java"
+    ],
+    "editor.formatOnSave": true
+}
