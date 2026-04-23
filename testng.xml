@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="ECommerce Test Suite" verbose="2">
+<suite name="Thegioididong.com Test Suite" verbose="2">
+
+    <listeners>
+        <listener class-name="listeners.TestListener"/>
+    </listeners>
+
+    <test name="Homepage &amp; Login Tests">
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
 
     <test name="Search Tests">
         <classes>
@@ -8,19 +18,13 @@
         </classes>
     </test>
 
-    <test name="Login Tests">
-        <classes>
-            <class name="tests.LoginTest"/>
-        </classes>
-    </test>
-
-    <test name="Cart Tests">
+    <test name="Product &amp; Cart Tests">
         <classes>
             <class name="tests.SearchAndCartTest"/>
         </classes>
     </test>
 
-    <test name="Checkout Tests">
+    <test name="Cart Page Tests">
         <classes>
             <class name="tests.CheckoutTest"/>
         </classes>

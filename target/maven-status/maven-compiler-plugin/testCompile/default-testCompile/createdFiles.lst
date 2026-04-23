@@ -3,3 +3,4 @@ tests\SearchAndCartTest.class
 tests\SearchTest.class
 tests\CheckoutTest.class
 tests\LoginTest.class
+listeners\TestListener.class

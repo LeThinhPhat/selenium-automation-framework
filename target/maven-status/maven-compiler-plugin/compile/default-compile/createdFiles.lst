@@ -1,7 +1,9 @@
 base\BasePage.class
+pages\ProductPage.class
 pages\LoginPage.class
 pages\CartPage.class
 pages\HomePage.class
 pages\SearchPage.class
 pages\CheckoutPage.class
+utils\ExtentReportManager.class
 utils\DriverManager.class

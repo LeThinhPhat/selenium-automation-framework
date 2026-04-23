@@ -14,8 +14,6 @@ public class CheckoutPage extends BasePage {
 
     // --- Locators: Step 2 - Tổng kết đơn hàng ---
     private final By summaryTitle    = By.cssSelector(".title");
-    private final By itemTotal       = By.cssSelector(".summary_subtotal_label");
-    private final By taxLabel        = By.cssSelector(".summary_tax_label");
     private final By totalLabel      = By.cssSelector(".summary_total_label");
     private final By finishButton    = By.id("finish");
 
@@ -40,14 +38,6 @@ public class CheckoutPage extends BasePage {
     }
 
     // --- Actions: Xác nhận đơn hàng ---
-    public String getItemTotal() {
-        return getText(itemTotal);
-    }
-
-    public String getTax() {
-        return getText(taxLabel);
-    }
-
     public String getTotal() {
         return getText(totalLabel);
     }

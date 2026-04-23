@@ -1,64 +1,74 @@
 package tests;
 
 import base.BaseTest;
+import listeners.TestListener;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import pages.CartPage;
-import pages.HomePage;
-import pages.LoginPage;
+import pages.ProductPage;
+import pages.SearchPage;
+import utils.DriverManager;
 
+import java.util.List;
+
+@Listeners(TestListener.class)
 public class SearchAndCartTest extends BaseTest {
 
-    private void loginAsStandard() {
-        new LoginPage().login("standard_user", "secret_sauce");
+    @Test(description = "Tìm kiếm iPhone và click vào sản phẩm đầu tiên")
+    public void testSearchAndClickProduct() {
+        SearchPage searchPage = new SearchPage();
+        searchPage.submitSearch("iPhone");
+
+        Assert.assertTrue(searchPage.hasResults(), "Phải có kết quả tìm kiếm iPhone");
+
+        List<WebElement> items = searchPage.getResultItems();
+        Assert.assertFalse(items.isEmpty(), "Danh sách sản phẩm không được rỗng");
+
+        items.get(0).click();
+
+        ProductPage productPage = new ProductPage();
+        Assert.assertTrue(productPage.isOnProductPage(), "Phải vào trang chi tiết sản phẩm");
+        TestListener.getTest().info("Sản phẩm: " + productPage.getProductName());
     }
 
-    @Test(description = "Thêm 1 sản phẩm vào giỏ hàng")
-    public void testAddOneProductToCart() {
-        loginAsStandard();
+    @Test(description = "Sản phẩm trong kết quả tìm kiếm có hiển thị giá")
+    public void testSearchResultHasPrice() {
+        SearchPage searchPage = new SearchPage();
+        searchPage.submitSearch("Samsung");
 
-        HomePage homePage = new HomePage();
-        homePage.addProductToCart("Sauce Labs Backpack");
+        Assert.assertTrue(searchPage.hasResults(), "Phải có kết quả");
 
-        Assert.assertEquals(homePage.getCartCount(), 1, "Giỏ hàng phải có 1 sản phẩm");
+        List<WebElement> prices = DriverManager.getDriver()
+                .findElements(By.cssSelector(".item[data-id] .price, .item[data-id] .box-p strong"));
+        Assert.assertFalse(prices.isEmpty(), "Sản phẩm trong kết quả phải có giá");
+        TestListener.getTest().info("Giá sản phẩm đầu tiên: " + prices.get(0).getText());
     }
 
-    @Test(description = "Thêm nhiều sản phẩm vào giỏ hàng")
-    public void testAddMultipleProductsToCart() {
-        loginAsStandard();
+    @Test(description = "Trang chi tiết sản phẩm có nút thêm vào giỏ")
+    public void testProductPageHasAddToCart() {
+        SearchPage searchPage = new SearchPage();
+        searchPage.submitSearch("iPhone");
 
-        HomePage homePage = new HomePage();
-        homePage.addProductToCart("Sauce Labs Backpack");
-        homePage.addProductToCart("Sauce Labs Bike Light");
-        homePage.addProductToCart("Sauce Labs Bolt T-Shirt");
+        Assert.assertTrue(searchPage.hasResults());
+        searchPage.getResultItems().get(0).click();
 
-        Assert.assertEquals(homePage.getCartCount(), 3, "Giỏ hàng phải có 3 sản phẩm");
+        ProductPage productPage = new ProductPage();
+        Assert.assertTrue(productPage.isOnProductPage(), "Phải vào trang sản phẩm");
+        Assert.assertTrue(productPage.hasAddToCartButton(), "Phải có nút thêm vào giỏ hàng");
     }
 
-    @Test(description = "Xóa sản phẩm khỏi giỏ hàng")
-    public void testRemoveProductFromCart() {
-        loginAsStandard();
+    @Test(description = "Trang sản phẩm hiển thị giá bán")
+    public void testProductPageHasPrice() {
+        SearchPage searchPage = new SearchPage();
+        searchPage.submitSearch("Laptop");
 
-        HomePage homePage = new HomePage();
-        homePage.addProductToCart("Sauce Labs Backpack");
-        homePage.addProductToCart("Sauce Labs Bike Light");
-        homePage.goToCart();
+        Assert.assertTrue(searchPage.hasResults());
+        searchPage.getResultItems().get(0).click();
 
-        CartPage cartPage = new CartPage();
-        Assert.assertTrue(cartPage.isOnCartPage());
-        Assert.assertEquals(cartPage.getItemCount(), 2);
-
-        cartPage.removeProduct("Sauce Labs Backpack");
-        Assert.assertEquals(cartPage.getItemCount(), 1, "Còn 1 sản phẩm sau khi xóa");
-    }
-
-    @Test(description = "Sắp xếp sản phẩm theo giá thấp đến cao")
-    public void testSortByPriceLowToHigh() {
-        loginAsStandard();
-
-        HomePage homePage = new HomePage();
-        homePage.sortBy("lohi"); // lohi = low to high
-        // Kiểm tra trang vẫn hiển thị bình thường
-        Assert.assertTrue(homePage.isOnHomePage(), "Trang vẫn hoạt động sau khi sort");
+        ProductPage productPage = new ProductPage();
+        Assert.assertTrue(productPage.hasPrice(), "Trang sản phẩm phải hiển thị giá");
+        TestListener.getTest().info("Giá: " + productPage.getProductPrice());
     }
 }

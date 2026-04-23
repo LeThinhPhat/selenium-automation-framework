@@ -1,49 +1,205 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="15" passed="15" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-23T14:28:42 ICT" name="Surefire suite" finished-at="2026-04-23T14:29:20 ICT" duration-ms="38100">
+  <suite started-at="2026-04-23T15:22:50 ICT" name="Thegioididong.com Test Suite" finished-at="2026-04-23T15:24:44 ICT" duration-ms="113836">
     <groups>
     </groups>
-    <test started-at="2026-04-23T14:28:42 ICT" name="Surefire test" finished-at="2026-04-23T14:29:20 ICT" duration-ms="38100">
-      <class name="tests.SearchTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SearchTest@318ba8c8]" started-at="2026-04-23T14:28:42 ICT" name="setUp" finished-at="2026-04-23T14:28:48 ICT" duration-ms="5974" status="PASS">
+    <test started-at="2026-04-23T15:22:50 ICT" name="Homepage &amp; Login Tests" finished-at="2026-04-23T15:23:07 ICT" duration-ms="16707">
+      <class name="tests.LoginTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTest@479d31f3]" started-at="2026-04-23T15:22:50 ICT" name="setUp" finished-at="2026-04-23T15:22:55 ICT" duration-ms="4580" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testSearchFullResult()[pri:0, instance:tests.SearchTest@318ba8c8]" started-at="2026-04-23T14:28:48 ICT" name="testSearchFullResult" description="Tìm kiếm và xem kết quả đầy đủ" finished-at="2026-04-23T14:28:52 ICT" duration-ms="3572" status="PASS">
+        <test-method signature="testCartIconVisible()[pri:0, instance:tests.LoginTest@479d31f3]" started-at="2026-04-23T15:22:55 ICT" name="testCartIconVisible" description="Icon giỏ hàng hiển thị trên header" finished-at="2026-04-23T15:22:56 ICT" duration-ms="900" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCartIconVisible -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@479d31f3]" started-at="2026-04-23T15:22:56 ICT" name="tearDown" finished-at="2026-04-23T15:22:56 ICT" duration-ms="197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTest@479d31f3]" started-at="2026-04-23T15:22:56 ICT" name="setUp" finished-at="2026-04-23T15:22:59 ICT" duration-ms="3364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testHomePageDomain()[pri:0, instance:tests.LoginTest@479d31f3]" started-at="2026-04-23T15:22:59 ICT" name="testHomePageDomain" description="Trang chủ load đúng domain" finished-at="2026-04-23T15:22:59 ICT" duration-ms="22" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomePageDomain -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@479d31f3]" started-at="2026-04-23T15:22:59 ICT" name="tearDown" finished-at="2026-04-23T15:22:59 ICT" duration-ms="185" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTest@479d31f3]" started-at="2026-04-23T15:22:59 ICT" name="setUp" finished-at="2026-04-23T15:23:03 ICT" duration-ms="3986" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testHomePageLoads()[pri:0, instance:tests.LoginTest@479d31f3]" started-at="2026-04-23T15:23:03 ICT" name="testHomePageLoads" description="Trang chủ load thành công - có thanh tìm kiếm" finished-at="2026-04-23T15:23:03 ICT" duration-ms="79" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomePageLoads -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@479d31f3]" started-at="2026-04-23T15:23:03 ICT" name="tearDown" finished-at="2026-04-23T15:23:04 ICT" duration-ms="169" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginTest@479d31f3]" started-at="2026-04-23T15:23:04 ICT" name="setUp" finished-at="2026-04-23T15:23:06 ICT" duration-ms="2923" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testHomePageTitle()[pri:0, instance:tests.LoginTest@479d31f3]" started-at="2026-04-23T15:23:06 ICT" name="testHomePageTitle" description="Tiêu đề trang chủ đúng" finished-at="2026-04-23T15:23:06 ICT" duration-ms="18" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testHomePageTitle -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@479d31f3]" started-at="2026-04-23T15:23:06 ICT" name="tearDown" finished-at="2026-04-23T15:23:07 ICT" duration-ms="173" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.LoginTest -->
+    </test> <!-- Homepage & Login Tests -->
+    <test started-at="2026-04-23T15:23:07 ICT" name="Search Tests" finished-at="2026-04-23T15:23:38 ICT" duration-ms="30809">
+      <class name="tests.SearchTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SearchTest@293a5bf6]" started-at="2026-04-23T15:23:07 ICT" name="setUp" finished-at="2026-04-23T15:23:11 ICT" duration-ms="3712" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testSearchFullResult()[pri:0, instance:tests.SearchTest@293a5bf6]" started-at="2026-04-23T15:23:11 ICT" name="testSearchFullResult" description="Tìm kiếm và xem kết quả đầy đủ" finished-at="2026-04-23T15:23:14 ICT" duration-ms="3805" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearchFullResult -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SearchTest@318ba8c8]" started-at="2026-04-23T14:28:52 ICT" name="tearDown" finished-at="2026-04-23T14:28:53 ICT" duration-ms="909" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SearchTest@293a5bf6]" started-at="2026-04-23T15:23:14 ICT" name="tearDown" finished-at="2026-04-23T15:23:15 ICT" duration-ms="230" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SearchTest@318ba8c8]" started-at="2026-04-23T14:28:53 ICT" name="setUp" finished-at="2026-04-23T14:28:58 ICT" duration-ms="4914" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SearchTest@293a5bf6]" started-at="2026-04-23T15:23:15 ICT" name="setUp" finished-at="2026-04-23T15:23:18 ICT" duration-ms="3848" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testSearchNoResult()[pri:0, instance:tests.SearchTest@318ba8c8]" started-at="2026-04-23T14:28:58 ICT" name="testSearchNoResult" description="Tìm kiếm từ khóa không tồn tại" finished-at="2026-04-23T14:29:11 ICT" duration-ms="13075" status="PASS">
+        <test-method signature="testSearchNoResult()[pri:0, instance:tests.SearchTest@293a5bf6]" started-at="2026-04-23T15:23:18 ICT" name="testSearchNoResult" description="Tìm kiếm từ khóa không tồn tại" finished-at="2026-04-23T15:23:32 ICT" duration-ms="13258" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearchNoResult -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SearchTest@318ba8c8]" started-at="2026-04-23T14:29:11 ICT" name="tearDown" finished-at="2026-04-23T14:29:11 ICT" duration-ms="380" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SearchTest@293a5bf6]" started-at="2026-04-23T15:23:32 ICT" name="tearDown" finished-at="2026-04-23T15:23:32 ICT" duration-ms="324" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SearchTest@318ba8c8]" started-at="2026-04-23T14:29:11 ICT" name="setUp" finished-at="2026-04-23T14:29:17 ICT" duration-ms="5550" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SearchTest@293a5bf6]" started-at="2026-04-23T15:23:32 ICT" name="setUp" finished-at="2026-04-23T15:23:35 ICT" duration-ms="2907" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testSearchSuggest()[pri:0, instance:tests.SearchTest@318ba8c8]" started-at="2026-04-23T14:29:17 ICT" name="testSearchSuggest" description="Tìm kiếm hiện gợi ý sản phẩm" finished-at="2026-04-23T14:29:20 ICT" duration-ms="3157" status="PASS">
+        <test-method signature="testSearchSuggest()[pri:0, instance:tests.SearchTest@293a5bf6]" started-at="2026-04-23T15:23:35 ICT" name="testSearchSuggest" description="Tìm kiếm hiện gợi ý sản phẩm" finished-at="2026-04-23T15:23:37 ICT" duration-ms="2518" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearchSuggest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SearchTest@318ba8c8]" started-at="2026-04-23T14:29:20 ICT" name="tearDown" finished-at="2026-04-23T14:29:20 ICT" duration-ms="517" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SearchTest@293a5bf6]" started-at="2026-04-23T15:23:37 ICT" name="tearDown" finished-at="2026-04-23T15:23:38 ICT" duration-ms="206" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.SearchTest -->
-    </test> <!-- Surefire test -->
-  </suite> <!-- Surefire suite -->
+    </test> <!-- Search Tests -->
+    <test started-at="2026-04-23T15:23:38 ICT" name="Product &amp; Cart Tests" finished-at="2026-04-23T15:24:12 ICT" duration-ms="34440">
+      <class name="tests.SearchAndCartTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SearchAndCartTest@409bf450]" started-at="2026-04-23T15:23:38 ICT" name="setUp" finished-at="2026-04-23T15:23:42 ICT" duration-ms="3865" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testProductPageHasAddToCart()[pri:0, instance:tests.SearchAndCartTest@409bf450]" started-at="2026-04-23T15:23:42 ICT" name="testProductPageHasAddToCart" description="Trang chi tiết sản phẩm có nút thêm vào giỏ" finished-at="2026-04-23T15:23:48 ICT" duration-ms="6052" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testProductPageHasAddToCart -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SearchAndCartTest@409bf450]" started-at="2026-04-23T15:23:48 ICT" name="tearDown" finished-at="2026-04-23T15:23:48 ICT" duration-ms="267" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SearchAndCartTest@409bf450]" started-at="2026-04-23T15:23:48 ICT" name="setUp" finished-at="2026-04-23T15:23:51 ICT" duration-ms="2921" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testProductPageHasPrice()[pri:0, instance:tests.SearchAndCartTest@409bf450]" started-at="2026-04-23T15:23:51 ICT" name="testProductPageHasPrice" description="Trang sản phẩm hiển thị giá bán" finished-at="2026-04-23T15:23:55 ICT" duration-ms="4285" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testProductPageHasPrice -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SearchAndCartTest@409bf450]" started-at="2026-04-23T15:23:55 ICT" name="tearDown" finished-at="2026-04-23T15:23:55 ICT" duration-ms="215" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SearchAndCartTest@409bf450]" started-at="2026-04-23T15:23:55 ICT" name="setUp" finished-at="2026-04-23T15:23:59 ICT" duration-ms="3349" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testSearchAndClickProduct()[pri:0, instance:tests.SearchAndCartTest@409bf450]" started-at="2026-04-23T15:23:59 ICT" name="testSearchAndClickProduct" description="Tìm kiếm iPhone và click vào sản phẩm đầu tiên" finished-at="2026-04-23T15:24:05 ICT" duration-ms="6802" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchAndClickProduct -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SearchAndCartTest@409bf450]" started-at="2026-04-23T15:24:05 ICT" name="tearDown" finished-at="2026-04-23T15:24:06 ICT" duration-ms="254" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.SearchAndCartTest@409bf450]" started-at="2026-04-23T15:24:06 ICT" name="setUp" finished-at="2026-04-23T15:24:10 ICT" duration-ms="3857" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testSearchResultHasPrice()[pri:0, instance:tests.SearchAndCartTest@409bf450]" started-at="2026-04-23T15:24:10 ICT" name="testSearchResultHasPrice" description="Sản phẩm trong kết quả tìm kiếm có hiển thị giá" finished-at="2026-04-23T15:24:12 ICT" duration-ms="2344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSearchResultHasPrice -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.SearchAndCartTest@409bf450]" started-at="2026-04-23T15:24:12 ICT" name="tearDown" finished-at="2026-04-23T15:24:12 ICT" duration-ms="222" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.SearchAndCartTest -->
+    </test> <!-- Product & Cart Tests -->
+    <test started-at="2026-04-23T15:24:12 ICT" name="Cart Page Tests" finished-at="2026-04-23T15:24:44 ICT" duration-ms="31638">
+      <class name="tests.CheckoutTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.CheckoutTest@18078bef]" started-at="2026-04-23T15:24:12 ICT" name="setUp" finished-at="2026-04-23T15:24:16 ICT" duration-ms="3813" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCartIconNavigation()[pri:0, instance:tests.CheckoutTest@18078bef]" started-at="2026-04-23T15:24:16 ICT" name="testCartIconNavigation" description="Click icon giỏ hàng chuyển trang thành công" finished-at="2026-04-23T15:24:19 ICT" duration-ms="2539" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCartIconNavigation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.CheckoutTest@18078bef]" started-at="2026-04-23T15:24:19 ICT" name="tearDown" finished-at="2026-04-23T15:24:19 ICT" duration-ms="217" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.CheckoutTest@18078bef]" started-at="2026-04-23T15:24:19 ICT" name="setUp" finished-at="2026-04-23T15:24:25 ICT" duration-ms="6337" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCartIsEmpty()[pri:0, instance:tests.CheckoutTest@18078bef]" started-at="2026-04-23T15:24:25 ICT" name="testCartIsEmpty" description="Giỏ hàng trống khi chưa thêm sản phẩm" finished-at="2026-04-23T15:24:30 ICT" duration-ms="5312" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCartIsEmpty -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.CheckoutTest@18078bef]" started-at="2026-04-23T15:24:30 ICT" name="tearDown" finished-at="2026-04-23T15:24:31 ICT" duration-ms="205" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.CheckoutTest@18078bef]" started-at="2026-04-23T15:24:31 ICT" name="setUp" finished-at="2026-04-23T15:24:34 ICT" duration-ms="3898" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCartPageLoads()[pri:0, instance:tests.CheckoutTest@18078bef]" started-at="2026-04-23T15:24:34 ICT" name="testCartPageLoads" description="Trang giỏ hàng load thành công" finished-at="2026-04-23T15:24:37 ICT" duration-ms="2497" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCartPageLoads -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.CheckoutTest@18078bef]" started-at="2026-04-23T15:24:37 ICT" name="tearDown" finished-at="2026-04-23T15:24:37 ICT" duration-ms="163" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.CheckoutTest@18078bef]" started-at="2026-04-23T15:24:37 ICT" name="setUp" finished-at="2026-04-23T15:24:41 ICT" duration-ms="3826" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCartPageUrl()[pri:0, instance:tests.CheckoutTest@18078bef]" started-at="2026-04-23T15:24:41 ICT" name="testCartPageUrl" description="URL trang giỏ hàng chứa /cart" finished-at="2026-04-23T15:24:43 ICT" duration-ms="2496" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCartPageUrl -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.CheckoutTest@18078bef]" started-at="2026-04-23T15:24:43 ICT" name="tearDown" finished-at="2026-04-23T15:24:44 ICT" duration-ms="332" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.CheckoutTest -->
+    </test> <!-- Cart Page Tests -->
+  </suite> <!-- Thegioididong.com Test Suite -->
 </testng-results>

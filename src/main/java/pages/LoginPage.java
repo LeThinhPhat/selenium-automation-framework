@@ -5,41 +5,47 @@ import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {
 
-    // --- Locators (saucedemo.com) ---
-    private final By usernameField = By.id("user-name");
-    private final By passwordField = By.id("password");
-    private final By loginButton   = By.id("login-button");
-    private final By errorMessage  = By.cssSelector("[data-test='error']");
+    // Popup đăng nhập
+    private final By loginPopup    = By.cssSelector("#popupbox, .loginbox, .modal-login");
+    private final By phoneInput    = By.cssSelector("input[name='sdt'], input[type='tel'], input[placeholder*='Số điện thoại'], input[placeholder*='điện thoại']");
+    private final By passwordInput = By.cssSelector("input[type='password']");
+    private final By submitBtn     = By.cssSelector(".btn-login, button.login, .loginbox button[type='submit']");
+    private final By errorMsg      = By.cssSelector(".error-login, .msg-error, .txt-error, .login-error");
+    private final By closePopup    = By.cssSelector("#popupbox .close, .modal-login .close, .loginbox .close");
 
-    // --- Actions ---
-    public void enterUsername(String username) {
-        fill(usernameField, username);
+    public boolean isPopupVisible() {
+        return isDisplayed(loginPopup);
+    }
+
+    public void enterPhone(String phone) {
+        fill(phoneInput, phone);
     }
 
     public void enterPassword(String password) {
-        fill(passwordField, password);
+        fill(passwordInput, password);
     }
 
-    public void clickLogin() {
-        click(loginButton);
+    public void clickSubmit() {
+        click(submitBtn);
     }
 
-    public void login(String username, String password) {
-        enterUsername(username);
+    public void login(String phone, String password) {
+        enterPhone(phone);
         enterPassword(password);
-        clickLogin();
+        clickSubmit();
     }
 
-    // --- Getters ---
+    public boolean isErrorVisible() {
+        return isDisplayed(errorMsg);
+    }
+
     public String getErrorMessage() {
-        return getText(errorMessage);
+        return getText(errorMsg);
     }
 
-    public boolean isErrorDisplayed() {
-        return isDisplayed(errorMessage);
-    }
-
-    public boolean isOnLoginPage() {
-        return isDisplayed(usernameField);
+    public void closePopup() {
+        if (isDisplayed(closePopup)) {
+            click(closePopup);
+        }
     }
 }

@@ -5,35 +5,24 @@ import org.openqa.selenium.By;
 
 public class CartPage extends BasePage {
 
-    // --- Locators ---
-    private final By cartTitle       = By.cssSelector(".title");
-    private final By cartItems       = By.cssSelector(".cart_item");
-    private final By checkoutButton  = By.id("checkout");
-    private final By continueButton  = By.id("continue-shopping");
+    private final By cartItems  = By.cssSelector(".product-list li, .lst-cart li, .item-cart");
+    private final By emptyMsg   = By.cssSelector(".box-empty, .empty-cart, .cart-empty");
+    private final By totalPrice = By.cssSelector(".total-price, .price-total, .txt-total");
 
-    private By removeButton(String productName) {
-        String id = "remove-" + productName.toLowerCase().replace(" ", "-");
-        return By.id(id);
-    }
-
-    // --- Actions ---
     public boolean isOnCartPage() {
-        return getText(cartTitle).equals("Your Cart");
+        return driver.getCurrentUrl().contains("/cart");
     }
 
     public int getItemCount() {
         return driver.findElements(cartItems).size();
     }
 
-    public void removeProduct(String productName) {
-        click(removeButton(productName));
+    public boolean isCartEmpty() {
+        return isDisplayed(emptyMsg) || getItemCount() == 0;
     }
 
-    public void proceedToCheckout() {
-        click(checkoutButton);
-    }
-
-    public void continueShopping() {
-        click(continueButton);
+    public String getTotalPrice() {
+        if (!isDisplayed(totalPrice)) return "0";
+        return getText(totalPrice);
     }
 }

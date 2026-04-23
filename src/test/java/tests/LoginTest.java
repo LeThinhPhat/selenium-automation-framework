@@ -1,51 +1,39 @@
 package tests;
 
 import base.BaseTest;
+import listeners.TestListener;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.HomePage;
-import pages.LoginPage;
+import utils.DriverManager;
 
+@Listeners(TestListener.class)
 public class LoginTest extends BaseTest {
 
-    @Test(description = "Đăng nhập thành công với tài khoản hợp lệ")
-    public void testLoginSuccess() {
-        LoginPage loginPage = new LoginPage();
-        loginPage.login("standard_user", "secret_sauce");
-
+    @Test(description = "Trang chủ load thành công - có thanh tìm kiếm")
+    public void testHomePageLoads() {
         HomePage homePage = new HomePage();
-        Assert.assertTrue(homePage.isOnHomePage(), "Phải vào được trang chủ sau khi login");
+        Assert.assertTrue(homePage.isLoaded(), "Trang chủ phải hiển thị thanh tìm kiếm");
+        TestListener.getTest().info("URL: " + DriverManager.getDriver().getCurrentUrl());
     }
 
-    @Test(description = "Đăng nhập thất bại với sai mật khẩu")
-    public void testLoginWrongPassword() {
-        LoginPage loginPage = new LoginPage();
-        loginPage.login("standard_user", "wrong_password");
-
-        Assert.assertTrue(loginPage.isErrorDisplayed(), "Phải hiện thông báo lỗi");
-        Assert.assertTrue(loginPage.getErrorMessage().contains("Username and password do not match"),
-                "Nội dung lỗi không đúng");
-    }
-
-    @Test(description = "Đăng nhập thất bại với tài khoản bị khóa")
-    public void testLoginLockedUser() {
-        LoginPage loginPage = new LoginPage();
-        loginPage.login("locked_out_user", "secret_sauce");
-
-        Assert.assertTrue(loginPage.isErrorDisplayed(), "Phải hiện thông báo lỗi");
-        Assert.assertTrue(loginPage.getErrorMessage().contains("locked out"),
-                "Phải báo tài khoản bị khóa");
-    }
-
-    @Test(description = "Đăng xuất thành công")
-    public void testLogout() {
-        LoginPage loginPage = new LoginPage();
-        loginPage.login("standard_user", "secret_sauce");
-
+    @Test(description = "Icon giỏ hàng hiển thị trên header")
+    public void testCartIconVisible() {
         HomePage homePage = new HomePage();
-        homePage.logout();
+        Assert.assertTrue(homePage.isCartVisible(), "Icon giỏ hàng phải hiển thị trên header");
+    }
 
-        // Sau logout phải quay về trang login (có ô input username)
-        Assert.assertTrue(new LoginPage().isOnLoginPage(), "Phải quay về trang login");
+    @Test(description = "Tiêu đề trang chủ đúng")
+    public void testHomePageTitle() {
+        String title = DriverManager.getDriver().getTitle();
+        Assert.assertFalse(title.isEmpty(), "Tiêu đề trang không được rỗng");
+        TestListener.getTest().info("Tiêu đề: " + title);
+    }
+
+    @Test(description = "Trang chủ load đúng domain")
+    public void testHomePageDomain() {
+        String url = DriverManager.getDriver().getCurrentUrl();
+        Assert.assertTrue(url.contains("thegioididong.com"), "Domain phải là thegioididong.com");
     }
 }

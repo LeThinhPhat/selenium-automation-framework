@@ -1,10 +1,13 @@
 package tests;
 
 import base.BaseTest;
+import listeners.TestListener;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.SearchPage;
 
+@Listeners(TestListener.class)
 public class SearchTest extends BaseTest {
 
     @Test(description = "Tìm kiếm hiện gợi ý sản phẩm")
@@ -15,8 +18,8 @@ public class SearchTest extends BaseTest {
         Assert.assertTrue(searchPage.isSuggestDisplayed(), "Phải hiện danh sách gợi ý");
         Assert.assertTrue(searchPage.getSuggestCount() > 0, "Phải có ít nhất 1 gợi ý");
 
-        System.out.println("Gợi ý đầu tiên: " + searchPage.getFirstSuggestName());
-        System.out.println("Giá: " + searchPage.getFirstSuggestPrice());
+        TestListener.getTest().info("Gợi ý đầu tiên: " + searchPage.getFirstSuggestName());
+        TestListener.getTest().info("Giá: " + searchPage.getFirstSuggestPrice());
     }
 
     @Test(description = "Tìm kiếm và xem kết quả đầy đủ")
@@ -25,7 +28,8 @@ public class SearchTest extends BaseTest {
         searchPage.submitSearch("Samsung");
 
         Assert.assertTrue(searchPage.hasResults(), "Phải có kết quả tìm kiếm");
-        System.out.println("Số sản phẩm tìm thấy: " + searchPage.getResultItems().size());
+        int count = searchPage.getResultItems().size();
+        TestListener.getTest().info("Số sản phẩm tìm thấy: " + count);
     }
 
     @Test(description = "Tìm kiếm từ khóa không tồn tại")
